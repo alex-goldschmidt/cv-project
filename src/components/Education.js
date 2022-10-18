@@ -10,9 +10,10 @@ const Education = () => {
   const SchoolInput = document.querySelector(".SchoolInput");
   const DegreeInput = document.querySelector(".DegreeInput");
   const TimeOfStudyInput = document.querySelector(".TimeOfStudyInput");
+  const EducationInformation = document.querySelector(".EducationInformation");
   return (
     <div className="EducationContainer">
-      <div>Education:</div>
+      <div className="EducationInformation">Education:</div>
       <form
         className="SchoolForm"
         value={Value}
@@ -60,6 +61,9 @@ const Education = () => {
             { id: EducationId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
           TimeOfStudyInput.style.display = "none";
+          EducationInformation.style.display = "flex";
+          EducationInformation.style.justifyContent = "center";
+          EducationInformation.style.marginTop = "10px";
         }}
       >
         <div className="TimeOfStudyInput">

@@ -10,9 +10,10 @@ const Personal = () => {
   const NameInput = document.querySelector(".NameInput");
   const EmailInput = document.querySelector(".EmailInput");
   const NumberInput = document.querySelector(".NumberInput");
+  const GeneralInformation = document.querySelector(".GeneralInformation");
   return (
     <div className="PersonalContainer">
-      <div>General Information:</div>
+      <div className="GeneralInformation">General Information:</div>
       <form
         className="NameForm"
         value={Value}
@@ -60,6 +61,8 @@ const Personal = () => {
             { id: PersonalId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
           NumberInput.style.display = "none";
+          GeneralInformation.style.display = "flex";
+          GeneralInformation.style.justifyContent = "center";
         }}
       >
         <div className="NumberInput">

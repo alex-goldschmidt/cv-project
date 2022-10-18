@@ -16,12 +16,14 @@ button {
 }
 
 .PersonalContainer,
-.EducationContainer {
+.EducationContainer,
+.ExperienceContainer {
   display: grid;
 }
 
 .cvContainer,
-.cvEduContainer {
+.cvEduContainer,
+.cvExpContainer {
   display: grid;
   justify-self: center;
   list-style-type: none;
@@ -37,6 +39,23 @@ li {
   justify-content: center;
 }
 
-.yearsButton {
+.yearsButton,
+.DatesButton,
+.TasksButton {
   margin-left: 4px;
+}
+
+textarea {
+  width: 202px;
+  height: 100px;
+}
+
+.TasksInput {
+  display: flex;
+}
+
+.TasksButton {
+  width: 135px;
+  height: 21.5px;
+  margin-top: 47px;
 }
