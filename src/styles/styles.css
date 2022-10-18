@@ -1,0 +1,17 @@
+form {
+  display: grid;
+}
+
+input {
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+button {
+  width: 135px;
+}
+
+.cvContainer {
+  display: grid;
+  justify-self: center;
+}
