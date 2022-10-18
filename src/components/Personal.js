@@ -4,7 +4,7 @@ import styles from "../styles/styles.css";
 let PersonalId = 0;
 const Personal = () => {
   const [Value, setValue] = useState("");
-  //“setName” function sets state variable "Name". useState("") call initializes variable "Name" with an empty string.
+  //“setValue” function sets state variable "Value". useState("") call initializes variable "Value" with an empty string.
   const [PersonalData, setPersonalData] = useState([]);
   //“setPersonalData” function sets state variable "PersonalData". useState([]) call initializes variable "PersonalData" with an empty array.
   const NameInput = document.querySelector(".NameInput");
@@ -12,6 +12,7 @@ const Personal = () => {
   const NumberInput = document.querySelector(".NumberInput");
   return (
     <div className="PersonalContainer">
+      <div>General Information:</div>
       <form
         className="NameForm"
         value={Value}

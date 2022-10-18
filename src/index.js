@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Personal from "./components/Personal";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -10,6 +12,8 @@ root.render(
   <React.StrictMode>
     <App />
     <Personal />
+    <Education />
+    <Experience />
   </React.StrictMode>
 );
 

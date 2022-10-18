@@ -1,3 +1,7 @@
+.App {
+  padding: 15px;
+}
+
 form {
   display: grid;
 }
@@ -11,7 +15,28 @@ button {
   width: 135px;
 }
 
-.cvContainer {
+.PersonalContainer,
+.EducationContainer {
+  display: grid;
+}
+
+.cvContainer,
+.cvEduContainer {
   display: grid;
   justify-self: center;
+  list-style-type: none;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background: black;
+  width: 600px;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+.yearsButton {
+  margin-left: 4px;
 }
