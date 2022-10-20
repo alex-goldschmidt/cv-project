@@ -7,10 +7,8 @@ const Education = () => {
   //“setName” function sets state variable "Name". useState("") call initializes variable "Name" with an empty string.
   const [EducationData, setEducationData] = useState([]);
   //“setEducationData” function sets state variable "EducationData". useState([]) call initializes variable "PersonalData" with an empty array.
-  const SchoolInput = document.querySelector(".SchoolInput");
-  const DegreeInput = document.querySelector(".DegreeInput");
-  const TimeOfStudyInput = document.querySelector(".TimeOfStudyInput");
   const EducationInformation = document.querySelector(".EducationInformation");
+
   return (
     <div className="EducationContainer">
       <div className="EducationInformation">Education:</div>
@@ -24,7 +22,6 @@ const Education = () => {
             ...EducationData,
             { id: EducationId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          SchoolInput.style.display = "none";
         }}
       >
         <div className="SchoolInput">
@@ -42,7 +39,6 @@ const Education = () => {
             ...EducationData,
             { id: EducationId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          DegreeInput.style.display = "none";
         }}
       >
         <div className="DegreeInput">
@@ -60,7 +56,6 @@ const Education = () => {
             ...EducationData,
             { id: EducationId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          TimeOfStudyInput.style.display = "none";
           EducationInformation.style.display = "flex";
           EducationInformation.style.justifyContent = "center";
           EducationInformation.style.marginTop = "10px";
@@ -71,9 +66,16 @@ const Education = () => {
           <button className="yearsButton">Add Years</button>
         </div>
       </form>
+
       <div className="cvEduContainer">
         {EducationData.map((data) => (
-          <li key={data.id}>{data.Value} </li>
+          <li
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            key={data.id}
+          >
+            {data.Value}
+          </li>
         ))}
       </div>
     </div>

@@ -7,9 +7,6 @@ const Personal = () => {
   //“setValue” function sets state variable "Value". useState("") call initializes variable "Value" with an empty string.
   const [PersonalData, setPersonalData] = useState([]);
   //“setPersonalData” function sets state variable "PersonalData". useState([]) call initializes variable "PersonalData" with an empty array.
-  const NameInput = document.querySelector(".NameInput");
-  const EmailInput = document.querySelector(".EmailInput");
-  const NumberInput = document.querySelector(".NumberInput");
   const GeneralInformation = document.querySelector(".GeneralInformation");
   return (
     <div className="PersonalContainer">
@@ -24,7 +21,6 @@ const Personal = () => {
             ...PersonalData,
             { id: PersonalId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          NameInput.style.display = "none";
         }}
       >
         <div className="NameInput">
@@ -42,7 +38,6 @@ const Personal = () => {
             ...PersonalData,
             { id: PersonalId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          EmailInput.style.display = "none";
         }}
       >
         <div className="EmailInput">
@@ -60,7 +55,6 @@ const Personal = () => {
             ...PersonalData,
             { id: PersonalId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          NumberInput.style.display = "none";
           GeneralInformation.style.display = "flex";
           GeneralInformation.style.justifyContent = "center";
         }}
@@ -70,9 +64,15 @@ const Personal = () => {
         </div>
       </form>
 
-      <div className="cvContainer">
+      <div className="cvPersonalContainer">
         {PersonalData.map((data) => (
-          <li key={data.id}>{data.Value} </li>
+          <li
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            key={data.id}
+          >
+            {data.Value}
+          </li>
         ))}
       </div>
     </div>

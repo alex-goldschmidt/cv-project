@@ -7,10 +7,6 @@ const Experience = () => {
   //“setValue” function sets state variable "Value". useState("") call initializes variable "Value" with an empty string.
   const [ExperienceData, setExperienceData] = useState([]);
   //“setExperienceData” function sets state variable "ExperienceData". useState([]) call initializes variable "Experience" with an empty array.
-  const CompanyInput = document.querySelector(".CompanyInput");
-  const PositionInput = document.querySelector(".PositionInput");
-  const TasksInput = document.querySelector(".TasksInput");
-  const DatesInput = document.querySelector(".DatesInput");
   const ExperienceInformation = document.querySelector(
     ".ExperienceInformation"
   );
@@ -27,7 +23,6 @@ const Experience = () => {
             ...ExperienceData,
             { id: ExperienceId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          CompanyInput.style.display = "none";
         }}
       >
         <div className="CompanyInput">
@@ -45,7 +40,6 @@ const Experience = () => {
             ...ExperienceData,
             { id: ExperienceId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          PositionInput.style.display = "none";
         }}
       >
         <div className="PositionInput">
@@ -63,7 +57,6 @@ const Experience = () => {
             ...ExperienceData,
             { id: ExperienceId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          TasksInput.style.display = "none";
         }}
       >
         <div className="TasksInput">
@@ -82,7 +75,6 @@ const Experience = () => {
             ...ExperienceData,
             { id: ExperienceId++, Value: Value },
           ]); // create new array with old items and 1 new item at the end.
-          DatesInput.style.display = "none";
           ExperienceInformation.style.display = "flex";
           ExperienceInformation.style.justifyContent = "center";
           ExperienceInformation.style.marginTop = "10px";
@@ -96,7 +88,13 @@ const Experience = () => {
 
       <div className="cvExpContainer">
         {ExperienceData.map((data) => (
-          <li key={data.id}>{data.Value} </li>
+          <li
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            key={data.id}
+          >
+            {data.Value}
+          </li>
         ))}
       </div>
     </div>
