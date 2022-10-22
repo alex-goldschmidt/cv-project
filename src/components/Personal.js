@@ -4,9 +4,13 @@ import styles from "../styles/styles.css";
 let PersonalId = 0;
 const Personal = () => {
   const [Value, setValue] = useState("");
-  //“setValue” function sets state variable "Value". useState("") call initializes variable "Value" with an empty string.
   const [PersonalData, setPersonalData] = useState([]);
-  //“setPersonalData” function sets state variable "PersonalData". useState([]) call initializes variable "PersonalData" with an empty array.
+
+  const addPersonalValue = () => {
+    setPersonalData([...PersonalData, { id: PersonalId++, Value: Value }]);
+    // create new array with old items and 1 new item at the end.
+  };
+
   const GeneralInformation = document.querySelector(".GeneralInformation");
   return (
     <div className="PersonalContainer">
@@ -17,10 +21,7 @@ const Personal = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setPersonalData([
-            ...PersonalData,
-            { id: PersonalId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addPersonalValue();
         }}
       >
         <div className="NameInput">
@@ -34,10 +35,7 @@ const Personal = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setPersonalData([
-            ...PersonalData,
-            { id: PersonalId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addPersonalValue();
         }}
       >
         <div className="EmailInput">
@@ -51,10 +49,7 @@ const Personal = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setPersonalData([
-            ...PersonalData,
-            { id: PersonalId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addPersonalValue();
           GeneralInformation.style.display = "flex";
           GeneralInformation.style.justifyContent = "center";
         }}

@@ -4,9 +4,11 @@ import styles from "../styles/styles.css";
 let EducationId = 0;
 const Education = () => {
   const [Value, setValue] = useState("");
-  //“setName” function sets state variable "Name". useState("") call initializes variable "Name" with an empty string.
   const [EducationData, setEducationData] = useState([]);
-  //“setEducationData” function sets state variable "EducationData". useState([]) call initializes variable "PersonalData" with an empty array.
+  const addEducationValue = () => {
+    setEducationData([...EducationData, { id: EducationId++, Value: Value }]); // create new array with old items and 1 new item at the end.
+  };
+
   const EducationInformation = document.querySelector(".EducationInformation");
 
   return (
@@ -18,10 +20,7 @@ const Education = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setEducationData([
-            ...EducationData,
-            { id: EducationId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addEducationValue();
         }}
       >
         <div className="SchoolInput">
@@ -35,10 +34,7 @@ const Education = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setEducationData([
-            ...EducationData,
-            { id: EducationId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addEducationValue();
         }}
       >
         <div className="DegreeInput">
@@ -52,10 +48,7 @@ const Education = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setEducationData([
-            ...EducationData,
-            { id: EducationId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addEducationValue();
           EducationInformation.style.display = "flex";
           EducationInformation.style.justifyContent = "center";
           EducationInformation.style.marginTop = "10px";

@@ -4,9 +4,14 @@ import styles from "../styles/styles.css";
 let ExperienceId = 0;
 const Experience = () => {
   const [Value, setValue] = useState("");
-  //“setValue” function sets state variable "Value". useState("") call initializes variable "Value" with an empty string.
   const [ExperienceData, setExperienceData] = useState([]);
-  //“setExperienceData” function sets state variable "ExperienceData". useState([]) call initializes variable "Experience" with an empty array.
+  const addExperienceValue = () => {
+    setExperienceData([
+      ...ExperienceData,
+      { id: ExperienceId++, Value: Value },
+    ]); // create new array with old items and 1 new item at the end.
+  };
+
   const ExperienceInformation = document.querySelector(
     ".ExperienceInformation"
   );
@@ -19,10 +24,7 @@ const Experience = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setExperienceData([
-            ...ExperienceData,
-            { id: ExperienceId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addExperienceValue();
         }}
       >
         <div className="CompanyInput">
@@ -36,10 +38,7 @@ const Experience = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setExperienceData([
-            ...ExperienceData,
-            { id: ExperienceId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addExperienceValue();
         }}
       >
         <div className="PositionInput">
@@ -53,10 +52,7 @@ const Experience = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setExperienceData([
-            ...ExperienceData,
-            { id: ExperienceId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addExperienceValue();
         }}
       >
         <div className="TasksInput">
@@ -71,10 +67,7 @@ const Experience = () => {
         onChange={(e) => setValue(e.target.value)}
         onSubmit={(e) => {
           e.preventDefault();
-          setExperienceData([
-            ...ExperienceData,
-            { id: ExperienceId++, Value: Value },
-          ]); // create new array with old items and 1 new item at the end.
+          addExperienceValue();
           ExperienceInformation.style.display = "flex";
           ExperienceInformation.style.justifyContent = "center";
           ExperienceInformation.style.marginTop = "10px";
